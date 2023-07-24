@@ -342,14 +342,6 @@ func providerConfigure(p *schema.Provider) schema.ConfigureFunc {
 		log.Printf("[DEBUG] Setting read_delay_ms to %d", readDelay)
 
 		parallelRequests := d.Get("parallel_requests").(bool)
-		isGithubDotCom, err := regexp.MatchString("^"+regexp.QuoteMeta("https://api.github.com"), baseURL)
-
-		if err != nil {
-			return nil, err
-		}
-		if parallelRequests && isGithubDotCom {
-			return nil, fmt.Errorf("parallel_requests cannot be true when connecting to public github")
-		}
 		log.Printf("[DEBUG] Setting parallel_requests to %t", parallelRequests)
 
 		config := Config{
