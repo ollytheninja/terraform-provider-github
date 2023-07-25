@@ -3,7 +3,6 @@ package github
 import (
 	"fmt"
 	"log"
-	"regexp"
 	"strings"
 	"time"
 
