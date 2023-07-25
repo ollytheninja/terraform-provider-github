@@ -342,7 +342,6 @@ func providerConfigure(p *schema.Provider) schema.ConfigureFunc {
 		log.Printf("[DEBUG] Setting read_delay_ms to %d", readDelay)
 
 		parallelRequests := d.Get("parallel_requests").(bool)
-		# Olly was here
 		log.Printf("[DEBUG] Setting parallel_requests to %t", parallelRequests)
 
 		config := Config{
