@@ -20,8 +20,12 @@ resource "github_organization_ruleset" "example" {
   enforcement = "active"
 
   conditions {
-    ref_name {
+    repository_name {
       include = ["~ALL"]
+      exclude = []
+    }
+    ref_name {
+      include = ["~DEFAULT_BRANCH"]
       exclude = []
     }
   }
